@@ -1,13 +1,17 @@
 Package: DataMatching
 Type: Package
-Title: What the Package Does (Title Case)
+Title: For Matching Data That Lack Common Entity Identifiers
 Version: 0.1
 Date: 2015-06-21
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: More about what it does (maybe more than one line)
+Authors@R: person("Daniel", "Emaasit", email = "daniel.emaasit@gmail.com", role = c("aut", "cre"))
+Maintainer: Daniel Emaasit daniel.emaasit@gmail.com
+Description: A mathematical statistical framework to integrate datasets that lack common entity identifiers and are stored in disparate databases
 License: What license is it under?
+Depends: R (>= 3.1.0)
 LazyData: TRUE
-Imports: 
-    Rcpp (>= 0.11.6)
-LinkingTo: 
+Imports:
+    Rcpp (>= 0.11.6), RecordLinkage
+LinkingTo:
     Rcpp
+URL: https://github.com/Emaasit/DataMatching, https://emaasit.github.io/datamatching
+
