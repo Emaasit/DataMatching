@@ -1,0 +1,17 @@
+{
+    "contents" : "# Hello, world!\n#\n# This is an example function named 'hello'\n# which prints 'Hello, world!'.\n#\n# You can learn more about package authoring with RStudio at:\n#\n#   http://r-pkgs.had.co.nz/\n#\n# Some useful keyboard shortcuts for package authoring:\n#\n#   Build and Reload Package:  'Ctrl + Shift + B'\n#   Check Package:             'Ctrl + Shift + E'\n#   Test Package:              'Ctrl + Shift + T'\n\n\n#' Building a Model with Top ten Features\n#'\n#' This function develops a prediction algorithm based on the top 10 features\n#' in 'x' that are most predictive of 'y'\n#'\n#' @param x a n X p matric of n observations and p predictors\n#' @param y a vector of length n representing the response\n#' @return a vector of coefficients from the final fitted moel with top 10 features\n#' @author Daniel Emaasit\n#' @details\n#' This function runs a univariate regression\n#' @seealso \\code{lm}\n#' @export\n#' @importFrom stats lm\n\ntopten <- function(x, y){\n  p <- ncol(x)\n  if (p < 10)\n    stop(\"ther are less than 10 predictors\")\n  pvalues <- numeric(p)\n  for( i in seq_len(p)) {\n    fit <- lm(y ~x[, i])\n    summ <- summary(fit)\n    pvalues[i] <- summ$coefficients[2,4]\n  }\n\n  ord <- order(pvalues)\n  ord <- ord[1:10]\n  x10 <- x[, ord]\n  fit <- lm(y ~ x10)\n  coef(fit)\n  }\n\n#' Prediction with Top Ten Features\n#'\n#' @details\n#' This function takes a set of coefficients produced by the \\code{topten}\n#' function and makes a prediction for each ot the values\n#' @param X\n#' @param b a vector of coefficeints obtained from the \\code{topten} function\n#' @return a numeric vector contatin the predictec values\n#' @export\n\npredict10 <- function(X, b) {\n  X <- cbind(1, X)\n  drop(X %*% b)\n}\n",
+    "created" : 1434941068013.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1636374505",
+    "id" : "9101079C",
+    "lastKnownWriteTime" : 1434942262,
+    "path" : "C:/Users/Emaasit/Dropbox/MyPackages/DataMatching/R/DataMatching.R",
+    "project_path" : "R/DataMatching.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
