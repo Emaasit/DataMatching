@@ -4,13 +4,13 @@ Title: For Matching Data That Lack Common Entity Identifiers
 Version: 0.1
 Date: 2015-06-21
 Authors@R: person("Daniel", "Emaasit", email = "daniel.emaasit@gmail.com", role = c("aut", "cre"))
-Maintainer: Daniel Emaasit daniel.emaasit@gmail.com
+Maintainer: Daniel Emaasit <daniel.emaasit@gmail.com>
 Description: A mathematical statistical framework to integrate datasets that lack common entity identifiers and are stored in disparate databases
-License: What license is it under?
+License: GPL-3
 Depends: R (>= 3.1.0)
 LazyData: TRUE
 Imports:
-    Rcpp (>= 0.11.6), RecordLinkage
+    Rcpp (>= 0.11.6)
 LinkingTo:
     Rcpp
 URL: https://github.com/Emaasit/DataMatching, https://emaasit.github.io/datamatching
